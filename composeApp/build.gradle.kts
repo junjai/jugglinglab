@@ -65,9 +65,15 @@ kotlin {
 
     @OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
     wasmJs {
-        browser()
+        browser {
+            commonWebpackConfig {
+                outputFileName = "jugglinglab.js"
+                publicPath = "/jugglinglab/"
+            }
+        }
         binaries.executable()
     }
+
 
     sourceSets {
         commonMain {
