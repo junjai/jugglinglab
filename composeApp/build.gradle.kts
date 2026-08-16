@@ -67,7 +67,7 @@ kotlin {
     wasmJs {
         browser {
             commonWebpackConfig {
-                outputFileName = "jugglinglab.js"
+                outputFileName = "composeApp.js"
             }
         }
         binaries.executable()
