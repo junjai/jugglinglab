@@ -68,7 +68,6 @@ kotlin {
         browser {
             commonWebpackConfig {
                 outputFileName = "jugglinglab.js"
-                publicPath = "/jugglinglab/"
             }
         }
         binaries.executable()
