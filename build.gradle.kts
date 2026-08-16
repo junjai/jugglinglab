@@ -26,13 +26,4 @@ tasks.register("androidBuild") {
     dependsOn(":androidApp:assembleDebug")
 }
 
-@OptIn(org.jetbrains.kotlin.gradle.ExperimentalWasmDsl::class)
-wasmJs {
-    browser {
-        commonWebpackConfig {
-            outputFileName = "jugglinglab.js"
-            publicPath = "/jugglinglab/"
-        }
-    }
-    binaries.executable()
-}
+
