@@ -25,3 +25,16 @@ tasks.register("androidBuild") {
     description = "Builds only the Android APKs"
     dependsOn(":androidApp:assembleDebug")
 }
+
+kotlin {
+    wasmJs {
+        binaries.executable()
+        browser {
+            commonWebpackConfig {
+                // Tells Webpack/Kotlin JS to look inside your subfolder
+                outputFileName = "jugglinglab.js"
+                publicPath = "/jugglinglab/" 
+            }
+        }
+    }
+}
