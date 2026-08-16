@@ -21,12 +21,13 @@
                     const text = document.querySelector('.loading-text');
                     if (spinner) spinner.style.display = 'none';
                     if (text) {
-                        text.innerHTML = 'WebAssembly not supported<br><span style="font-size: 0.9rem; text-transform: none; color: #d32f2f; display: inline-block; margin-top: 8px; letter-spacing: 0;">Juggling Lab requires a browser with WebAssembly support. Please upgrade your browser.</span>';
+                        text.innerHTML = 'WebAssembly not supported<br><span style="font-size: 0.9rem; text-transform: none; color: #d32f2f; display: inline-block; margin-top: 8px; letter-spacing: normal;">Please use a modern browser with WebAssembly support</span>';
                     }
                 });
             } else {
                 var base = document.createElement('base');
-                base.href = (window.location.pathname.startsWith('/app') || window.location.pathname.startsWith('/anim')) ? '/app/' : '/';
+                // Set base href to /jugglinglab/ for GitHub Pages deployment
+                base.href = '/jugglinglab/';
                 document.head.appendChild(base);
             }
         })();
